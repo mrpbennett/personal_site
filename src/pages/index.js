@@ -30,10 +30,22 @@ const IndexPage = () => (
         </span>
       </h2>
       <p>
-        I work at PulsePoint as a Solutions Engineer. I enjoy using Python alot! I often keep a{' '}
-        <a href='https://github.com/mrpbennett/TIL'>TIL log</a> of what I learn about on the job or in
-        personal projects.
+        I work at <a href='https://pulsepoint.com'>PulsePoint</a> as a Solutions Engineer. I enjoy using
+        Python a lot and use it for most of my projects! However, this site is built with{' '}
+        <a href='https://www.gatsbyjs.com'>GatsbyJS</a> and hosted via{' '}
+        <a href='https://www.gatsbyjs.com/products/cloud'>Gatsby Cloud</a>. You have to have some React
+        knowledge right?{' '}
+        <span role='img' alt='cool dude' className='text-xl'>
+          😎
+        </span>
       </p>
+
+      <p>
+        I often keep a repo of learnings from previous projects which can be found{' '}
+        <a href='https://github.com/mrpbennett/TIL'>here</a>. Which turns out to be a great resource for when
+        I need a refresh.
+      </p>
+
       <p>
         I also love to race bikes{' '}
         <span role='img' className='ml-2 text-3xl' aria-label='cyclist'>
