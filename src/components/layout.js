@@ -24,7 +24,7 @@ const data = [
 
 const Layout = ({ children }) => {
   return (
-    <div className='container mx-auto flex flex-col min-h-screen prose pt-10'>
+    <div className='container mx-auto flex flex-col min-h-screen prose pt-10 px-4 sm:px-0'>
       <header class=''>
         <h1 class='capitalize'>paul bennett</h1>
 
@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
       </div>
       <footer>
         <div class='container mx-auto py-3'>
-          <p class='text-center text-xs tracking-wider'>{new Date().getFullYear()} @mrpbennett</p>
+          <p class='text-center font-mono text-xs tracking-widest'>{new Date().getFullYear()} @mrpbennett</p>
         </div>
       </footer>
     </div>
