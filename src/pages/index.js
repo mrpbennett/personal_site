@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from 'gatsby';
+import { Timeline } from 'react-twitter-widgets';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Hero from '../components/hero';
 
 const social = [
   {
@@ -22,41 +25,16 @@ const IndexPage = () => (
   <Layout>
     <SEO title='Home' />
 
-    <section>
-      <h2>
-        Hi there{' '}
-        <span role='img' className='text-3xl' aria-label='waving hand'>
-          👋
-        </span>
-      </h2>
+    <Hero />
+
+    <section className='container mx-auto prose md:prose-lg'>
       <p>
-        I work at <a href='https://pulsepoint.com'>PulsePoint</a> as a Solutions Engineer. I enjoy using
-        Python a lot and use it for most of my projects! However, this site is built with{' '}
-        <a href='https://www.gatsbyjs.com'>GatsbyJS</a> and hosted via{' '}
-        <a href='https://www.gatsbyjs.com/products/cloud'>Gatsby Cloud</a>. You have to have some React
-        knowledge right?{' '}
-        <span role='img' alt='cool dude' className='text-xl'>
-          😎
-        </span>
+        Paul works at <a href='https://pulsepoint.com'>PulsePoint</a> as a Solutions Engineer. His interests
+        lie in financial literacy, programming and cycling, to name a few. If you want to get to know Paul a
+        little more there is more information on his <Link to='/about'>about page</Link>.
       </p>
 
-      <p>
-        I often keep a repo of learnings from previous projects which can be found{' '}
-        <a href='https://github.com/mrpbennett/TIL'>here</a>. Which turns out to be a great resource for when
-        I need a refresh.
-      </p>
-
-      <p>
-        I also love to race bikes{' '}
-        <span role='img' className='ml-2 text-3xl' aria-label='cyclist'>
-          🚴🏼‍♂️
-        </span>
-        <span role='img' className='text-3xl' aria-label='wind burst'>
-          💨
-        </span>
-      </p>
-
-      <p>You can find me on the internet below:</p>
+      <p>You can find him on the internet below:</p>
 
       <ul>
         {social.map((link) => (
@@ -66,10 +44,19 @@ const IndexPage = () => (
         ))}
       </ul>
 
-      <p>
-        If you like reading my content, you can also read my trash tweets on{' '}
-        <a href='https://twitter.com/mrpbennett'>Twitter</a>
-      </p>
+      <hr />
+
+      <div>
+        <p>
+          If you like reading his content, you can also read his tweets on{' '}
+          <a href='https://twitter.com/mrpbennett'>Twitter</a> here is a taste:
+        </p>
+
+        <Timeline
+          dataSource={{ sourceType: 'url', url: 'https://twitter.com/mrpbennett' }}
+          options={{ chrome: 'noheader, nofooter, transparent, noborders', tweetLimit: '1' }}
+        />
+      </div>
     </section>
   </Layout>
 );

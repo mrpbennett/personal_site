@@ -25,45 +25,35 @@ export const query = graphql`
 `;
 
 const PostList = (props) => {
-  const { currentPage, postNumPages } = props.pageContext;
-  const isFirst = currentPage === 1;
-  const isLast = currentPage === postNumPages;
-  const prevPage = currentPage - 1 === 1 ? '/posts/' : '/posts/' + (currentPage - 1).toString();
-  const nextPage = '/posts/' + (currentPage + 1).toString();
+  const { postNumPages } = props.pageContext;
 
   const posts = props.data.allContentfulPost.edges;
 
   return (
     <Layout>
       <SEO title='Posts' />
+
       {posts.map(({ node }) => {
         const title = node.title || node.slug;
         return (
-          <div className=''>
+          <div className='container mx-auto prose prose-lg'>
             <div className='mb-2'>
               <Link to={`/posts/${node.slug}`}>
-                <h2 className='underline font-sans mb-1'>{title}</h2>
+                <h3 className='underline font-sans mb-1'>{title}</h3>
               </Link>
-              <span className='font-mono text-sm'>Posted on {node.date}</span>
-            </div>
-            <div>
-              <p className=''>{node.content.childMarkdownRemark.excerpt}</p>
+
+              <div className='flex items-center justify-between'>
+                <span className='font-mono text-sm'>Posted on {node.date}</span>
+              </div>
+              <div>
+                <p className=''>{node.content.childMarkdownRemark.excerpt}</p>
+              </div>
             </div>
           </div>
         );
       })}
 
-      <div className='px-4 py-3 flex items-center justify-between mb-4'>
-        <div className='no-underline'>
-          {!isFirst && (
-            <Link to={prevPage} rel='prev' className='no-underline'>
-              <span role='img' aria-label='left pointing finger' className='text-2xl'>
-                👈
-              </span>
-            </Link>
-          )}
-        </div>
-
+      <div className='px-4 py-3 flex items-center justify-center mb-4'>
         <div className='flex font-sans'>
           {Array.from({ length: postNumPages }, (_, i) => (
             <Link
@@ -74,16 +64,6 @@ const PostList = (props) => {
               {i + 1}
             </Link>
           ))}
-        </div>
-
-        <div className=''>
-          {!isLast && (
-            <Link to={nextPage} rel='next' className='no-underline'>
-              <span role='img' aria-label='right pointing finger' className='text-2xl'>
-                👉
-              </span>
-            </Link>
-          )}
         </div>
       </div>
     </Layout>
