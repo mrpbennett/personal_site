@@ -3,51 +3,97 @@ import React from 'react';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const tech_i_use = [
-  'Python',
-  'SQL',
-  'Docker',
-  'HTML/CSS/SASS',
-  'JavaScript (we have a love/hate relationship)',
+const coreValues = [
+  {
+    value: 'Personal accountability',
+    valueStatement: 'Be accountable for delivering on your commitments.',
+  },
+  {
+    value: 'Have empathy & integrity',
+    valueStatement: 'Be understanding towards others & be real!',
+  },
+  {
+    value: 'Always keep growing',
+    valueStatement: 'Never stop learning and improving.',
+  },
+  {
+    value: 'Family & Friends',
+    valueStatement: 'Most important network you will ever have.',
+  },
+  {
+    value: 'Respect for people',
+    valueStatement: 'Treat people how you want to be treated.',
+  },
+  {
+    value: 'Keep it simple',
+    valueStatement: 'Life is too short for complicated.',
+  },
+  {
+    value: 'Financial literacy ',
+    valueStatement: 'Understand how to grow your money.',
+  },
+  {
+    value: 'Master the fundamentals',
+    valueStatement: 'Once master them everything else will fall into place.',
+  },
+  {
+    value: 'Sustainability',
+    valueStatement: 'Do your bit for the climate',
+  },
+  {
+    value: 'Don’t be afraid to enjoy the little things',
+    valueStatement: 'Life can be tough, enjoy the little things.',
+  },
 ];
 
 const AboutPage = () => (
   <Layout>
     <SEO title='About Me' />
 
-    <section>
+    <section className='container mx-auto prose prose-lg'>
       <div>
         <h2>
-          About me{' '}
+          About Paul{' '}
           <span role='img' className='text-3xl' aria-label='person behind a laptop'>
             👨🏼‍💻
           </span>
         </h2>
+
         <p>
-          I'm a solutions engineer based in London, UK. Before solution engineering, I spent my time in
-          account management within Ad Tech.
-        </p>
-        <h3>A brief overview of my tech journey</h3>
-        <p>
-          I have come to the developer world late, although I have always dabbled since my teens. I have never
-          "seriously" learnt to code until 2019. Where I restarted to learn Python which will always be my
-          first love, then on to things like React and Vue. Now though it's time to really dig into Python, I
-          deal with a lot of data in my day to day, that's why I've switched my focus primarily to Python.
+          Paul currently works as a Solution Engineer at <a href='https://pulsepoint.com/'>PulsePoint</a>.
+          Where he spends his time building internal tools as well as troubleshooting internal and external
+          tech-related issues. He has now been with the company for over 5 years.{' '}
         </p>
         <p>
-          As far as next steps, I'm still figuring out what I want to do and where I want to be. So stay tuned
-          because I'll definitely be sharing more about what the future holds.
+          He currently lives in West London with his wife and dog Charlie{' '}
+          <i>(aka Chumbo, that's a story for another time)</i>.
         </p>
 
+        <p>
+          Paul enjoys keeping up to date with the latest financial & crypto news, he's a strong believer in
+          Financial Literacy and the skills it brings such as personal financial management, budgeting, and
+          investing. Financial literacy is the foundation of your relationship with money.
+        </p>
+
+        <p>
+          When not being a solutions engineer or financially savvy, he enjoys getting out on this road bike
+          riding miles upon miles.
+        </p>
+
+        <p>Paul also tries to live by his core values which are the following:</p>
+
         <h3>
-          Tech I work with{' '}
+          Core Values{' '}
           <span role='img' className='text-3xl' aria-label='space alien'>
-            👾
+            🙏
           </span>
         </h3>
-        <ul>
-          {tech_i_use.map((tech) => (
-            <li>{tech}</li>
+        <ul className='list-outside ml-0'>
+          {coreValues.map((v) => (
+            <li className='flex flex-col'>
+              <span className='font-bold'>{v.value}</span>
+              <span className='font-light'>{v.valueStatement}</span>
+            </li>
           ))}
         </ul>
       </div>

@@ -31,3 +31,8 @@
      -webkit-transform: rotate(4deg);
      transform: rotate(4deg);
 }
+
+.h1-margin-fix {
+     margin-bottom: 0.8888889em;
+     line-height: 1.1111111;
+}

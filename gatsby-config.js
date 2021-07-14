@@ -2,8 +2,9 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
-    title: '🚴🏼‍♂️ + 🐍',
-    description: 'Pythonista 🐍 based in London, building things with code & racing bikes.',
+    title:
+      'Paul Bennett - Advocate for Financial literacy. Cyclist, Crypto, Foodie and the occasional dev. London',
+    description: 'Advocate for Financial literacy. Cyclist, Crypto, Foodie and the occasional dev. London',
     author: '@mrpbennett',
   },
   plugins: [

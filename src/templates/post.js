@@ -23,16 +23,18 @@ const Post = (props) => {
   return (
     <Layout>
       <SEO title={props.data.contentfulPost.title} />
-      <div className='mt-4'>
-        <h1 className=''>{props.data.contentfulPost.title}</h1>
-        <p className=''>
-          {props.data.contentfulPost.date} ·{' '}
-          {props.data.contentfulPost.content.childMarkdownRemark.timeToRead} min read
-        </p>
+      <div className='mt-4 container mx-auto prose prose-lg'>
+        <h2 className=''>{props.data.contentfulPost.title}</h2>
+        <div className='flex items-center justify-between'>
+          <p className=''>
+            {props.data.contentfulPost.date} ·{' '}
+            {props.data.contentfulPost.content.childMarkdownRemark.timeToRead} min read
+          </p>
+        </div>
       </div>
 
       <div
-        className=''
+        className='container mx-auto prose prose-lg mt-5'
         dangerouslySetInnerHTML={{
           __html: props.data.contentfulPost.content.childMarkdownRemark.html,
         }}></div>
