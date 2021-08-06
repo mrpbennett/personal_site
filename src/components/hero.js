@@ -3,7 +3,7 @@ import Memoji from '../images/memoji_1x1.png';
 
 const Hero = () => {
   return (
-    <section className={`bg-gradient-to-b from-primary to-secondary -mx-4 px-4`}>
+    <section className='bg-gradient-to-b from-primary to-secondary -mx-4 px-4 shadow-md'>
       <div className='container mx-auto flex justify-between items-center prose md:prose-lg mb-8 py-4'>
         <div className='flex flex-col'>
           <span className='text-white text-2xl md:text-4xl font-semibold'>Paul Bennett</span>
